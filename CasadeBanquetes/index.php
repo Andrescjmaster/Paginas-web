@@ -1,6 +1,5 @@
 <?php
-require_once 'php/conexion.php';
-
+require_once('connectsystem/conexion.php');
 $tipos_evento = [];
 $result = $conn->query("SELECT * FROM tipos_evento");
 while ($row = $result->fetch_assoc()) {
