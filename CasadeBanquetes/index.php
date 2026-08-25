@@ -1,16 +1,7 @@
 <?php
-require_once('connectsystem/conexion.php');
+// Conexión a base de datos pausada para despliegue
 $tipos_evento = [];
-$result = $conn->query("SELECT * FROM tipos_evento");
-while ($row = $result->fetch_assoc()) {
-    $tipos_evento[] = $row;
-}
-
 $servicios = [];
-$result = $conn->query("SELECT * FROM servicios");
-while ($row = $result->fetch_assoc()) {
-    $servicios[] = $row;
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
