@@ -32,11 +32,8 @@
 </section>
 
 <!-- STATS rapidas -->
-<?php/*
-  $total      = $conn->query("SELECT COUNT(*) AS t FROM participantes")->fetch_assoc()['t'];
-  $conf       = $conn->query("SELECT COUNT(*) AS t FROM participantes WHERE evento='Conferencia'")->fetch_assoc()['t'];
-  $taller     = $conn->query("SELECT COUNT(*) AS t FROM participantes WHERE evento='Taller'")->fetch_assoc()['t'];
-  $hackathon  = $conn->query("SELECT COUNT(*) AS t FROM participantes WHERE evento='Hackathon'")->fetch_assoc()['t'];*/
+<?php
+$result = false;
 ?>
 <section class="container py-4">
   <div class="row g-3 mb-5">
