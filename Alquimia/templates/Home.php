@@ -36,8 +36,7 @@ if (!isset($_SESSION['usuario_id'])) {
         <div style="display:flex; align-items:center; gap:10px;">
     <span style="color:white;">
         <i class="bi bi-person-circle"></i> 
-        <?php echo $_SESSION['usuario_nombre']; ?>
-    </span>
+<?php echo htmlspecialchars($_SESSION['usuario_nombre'] ?? 'Invitado'); ?>    </span>
     
     <a href="logout.php" class="btn btn-outline-light rounded-pill">
         Cerrar sesión
