@@ -17,10 +17,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($usuario_input) || empty($password)) {
         $error = 'Por favor completa todos los campos';
     } else {
-        $sql = "SELECT id, usuario, nombre_completo, correo, contrasena FROM usuarios WHERE usuario = ?";
-        $stmt = $conn->prepare($sql);
-        
-        if ($stmt) {
+        if ($conn) {
+            $sql = "SELECT id, usuario, nombre_completo, correo, contrasena FROM usuarios WHERE usuario = ?";
+            $stmt = $conn->prepare($sql);
+        } else {
+            $stmt = false;
+            $error = "La base de datos no está disponible en este momento.";
+        }
             $stmt->bind_param("s", $usuario_input);
             $stmt->execute();
             $resultado = $stmt->get_result();
