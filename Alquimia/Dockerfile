@@ -11,6 +11,9 @@ ENV APACHE_DOCUMENT_ROOT /var/www/html/templates
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
+# Indicar a Apache que acepte Home.php como página principal
+RUN echo "DirectoryIndex Home.php index.php" >> /etc/apache2/apache2.conf
+
 # Copiar todos los archivos
 COPY . /var/www/html/
 
