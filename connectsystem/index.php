@@ -1,4 +1,4 @@
-<?php require 'includes/conexion.php'; ?>
+<?php //require 'includes/conexion.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<?php include 'includes/navbar.php'; ?>
+<?php //include 'includes/navbar.php'; ?>
 
 <!-- HERO -->
 <section class="hero-section text-center">
