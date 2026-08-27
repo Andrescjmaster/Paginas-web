@@ -17,6 +17,9 @@ RUN echo "DirectoryIndex Home.php index.php" >> /etc/apache2/apache2.conf
 # Copiar todos los archivos
 COPY . /var/www/html/
 
+# Crear enlace simbólico para que templates encuentre la carpeta static
+RUN ln -s /var/www/html/static /var/www/html/templates/static
+
 # Dar permisos adecuados
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
