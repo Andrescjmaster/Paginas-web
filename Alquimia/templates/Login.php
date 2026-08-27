@@ -13,50 +13,42 @@ if (isset($_SESSION['usuario_id'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario_input = trim($_POST['usuario'] ?? '');
     $password = $_POST['password'] ?? '';
-    
+
     if (empty($usuario_input) || empty($password)) {
         $error = 'Por favor completa todos los campos';
     } else {
-        if ($conn) {
+        if ($conn !== null) {
             $sql = "SELECT id, usuario, nombre_completo, correo, contrasena FROM usuarios WHERE usuario = ?";
             $stmt = $conn->prepare($sql);
-        } else {
-            $stmt = false;
-            $error = "La base de datos no está disponible en este momento.";
-        }
-            $stmt->bind_param("s", $usuario_input);
-            $stmt->execute();
-            $resultado = $stmt->get_result();
-            
-            if ($resultado->num_rows == 1) {
-                $usuario = $resultado->fetch_assoc();
-                
-                // VERIFICACIÓN PROFESIONAL: Comparamos contraseña con el Hash
-                if (password_verify($password, $usuario['contrasena'])) {
-                    $_SESSION['usuario_id'] = $usuario['id'];
-                    $_SESSION['usuario_nombre'] = $usuario['usuario']; // Muestra "Andrew"
-                    $_SESSION['usuario_correo'] = $usuario['correo'];
-                    
-                    if (isset($_POST['recordar'])) {
-                        setcookie('usuario_recordado', $usuario['usuario'], time() + (30 * 24 * 60 * 60), '/');
+
+            if ($stmt) {
+                $stmt->bind_param("s", $usuario_input);
+                $stmt->execute();
+                $resultado = $stmt->get_result();
+
+                if ($resultado->num_rows == 1) {
+                    $usuario = $resultado->fetch_assoc();
+
+                    // VERIFICACIÓN PROFESIONAL: Comparamos contraseña con el Hash
+                    if (password_verify($password, $usuario['contrasena'])) {
+                        $_SESSION['usuario_id'] = $usuario['id'];
+                        $_SESSION['usuario_nombre'] = $usuario['usuario'];
+                        $_SESSION['usuario_correo'] = $usuario['correo'];
+
+                        header("Location: Home.php");
+                        exit();
+                    } else {
+                        $error = 'Contraseña incorrecta';
                     }
-                    
-                    header("Location: Home.php");
-                    exit();
                 } else {
-                    $error = 'Contraseña incorrecta';
+                    $error = 'El usuario no existe';
                 }
-            } else {
-                $error = 'El usuario no existe';
             }
-            $stmt->close();
         } else {
-            $error = 'Error en la base de datos: ' . $conn->error;
+            $error = "La base de datos no está disponible en este momento.";
         }
     }
 }
-
-$usuario_guardado = $_COOKIE['usuario_recordado'] ?? '';
 ?>
 
 <!DOCTYPE html>
