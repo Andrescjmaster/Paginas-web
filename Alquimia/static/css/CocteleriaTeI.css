@@ -1,0 +1,203 @@
+/* 1. CONFIGURACIÓN BASE (Responsive normalized) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: 	#d3d3d3;
+    color: #333;
+    overflow-x: hidden;
+    font-size: 16px; /* Base normalizada */
+}
+
+.navegacion { 
+    background-color: #1a2a1a; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 8%; 
+}
+
+.logo { color: #d2b48c; font-size: clamp(2rem, 4vw, 3rem); font-family: 'Times New Roman', serif; margin: 0; }
+.menu a { color: white; text-decoration: none; margin: 0 clamp(1rem, 2vw, 1.5rem); font-size: clamp(1rem, 2vw, 1.25rem); transition: 0.3s; }
+.menu a.active { border-bottom: clamp(2px, 0.3vw, 4px) solid white; font-weight: bold; }
+.boton-login { 
+    color: white; border: clamp(2px, 0.3vw, 3px) solid white; padding: clamp(0.8rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2.5rem); 
+    border-radius: clamp(8px, 1vw, 12px); text-decoration: none; font-size: clamp(0.9rem, 1.5vw, 1.1rem); 
+}
+
+/* 4. FILTROS */
+.seccion-filtros {
+    display: flex;
+    justify-content: center;
+    gap: clamp(3rem, 5vw, 4rem);
+    margin-bottom: clamp(2rem, 5vw, 4rem);
+    padding: clamp(1rem, 2vw, 1.5rem) clamp(0.5rem, 1vw, 1rem);
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.filtro-link {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: #888;
+    text-decoration: none;
+    margin: clamp(0.6rem, 1vw, 0.8rem) clamp(1.5rem, 2vw, 2rem);
+    padding-bottom: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.filtro-link.activo {
+    color: #000000;
+    border-bottom: clamp(4px, 0.8vw, 6px) solid #c4a484;
+}
+
+/* 5. PRODUCTOS - CORREGIDO CON EFECTO DIAGONAL */
+.container-treatment {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.treatment-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 3rem);
+    margin-bottom: clamp(3rem, 8vw, 6rem);
+}
+
+.treatment-row.reverse {
+    grid-template-columns: 1fr 1fr;
+}
+
+.treatment-info {
+    background-color: #e3f6ff;
+    padding: clamp(2rem, 4vw, 3.5rem) clamp(2rem, 5vw, 4rem);
+    z-index: 1;
+    position: relative;
+}
+
+/* Efecto diagonal para el primer elemento */
+.treatment-row:nth-child(1) .treatment-info {
+    clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
+    padding-right: clamp(4rem, 8vw, 6rem);
+}
+
+/* Efecto diagonal inverso para reverse */
+.treatment-row.reverse .treatment-info {
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+    padding-left: clamp(4rem, 8vw, 6rem);
+    text-align: right;
+}
+
+/* Segunda fila */
+.treatment-row:nth-child(3) .treatment-info {
+    clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
+    padding-right: clamp(4rem, 8vw, 6rem);
+}
+
+.treatment-row:nth-child(4) .treatment-info {
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+    padding-left: clamp(4rem, 8vw, 6rem);
+    text-align: right;
+}
+
+.treatment-row:nth-child(5) .treatment-info {
+    clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
+    padding-right: clamp(4rem, 8vw, 6rem);
+}
+
+.treatment-row:nth-child(6) .treatment-info {
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+    padding-left: clamp(4rem, 8vw, 6rem);
+    text-align: right;
+}
+
+.treatment-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #00adef;
+    line-height: 1;
+    margin-bottom: clamp(1.5rem, 2vw, 2rem);
+    margin-top: 0;
+}
+
+.treatment-text { 
+    font-size: clamp(1rem, 2vw, 1.1rem); 
+    line-height: 1.6; 
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    color: #555;
+}
+
+.btn-shop {
+    display: inline-block;
+    background-color: #00adef;
+    color: white;
+    text-decoration: none;
+    padding: clamp(1rem, 2vw, 1.2rem) clamp(2rem, 4vw, 3rem);
+    font-weight: bold;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+footer { 
+    background-color: #1a2a1a; 
+    color: white;
+    padding: clamp(2rem, 5vw, 3rem); 
+    font-size: clamp(1rem, 1.5vw, 1.1rem); 
+}
+
+footer .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+footer .footer-content p {
+    margin: 0;
+    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+}
+
+.social-links {
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(3rem, 6vw, 3.5rem);
+    height: clamp(3rem, 6vw, 3.5rem);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    transition: transform 0.25s ease, background 0.25s ease;
+    color: white;
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    width: clamp(1.5rem, 3vw, 2rem);
+    height: clamp(1.5rem, 3vw, 2rem);
+    fill: currentColor;
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+}

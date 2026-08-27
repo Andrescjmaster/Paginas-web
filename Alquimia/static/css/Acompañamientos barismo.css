@@ -1,0 +1,223 @@
+/* ==========================================================================
+   Acompañamientos coctel.css - VERSIÓN FINAL UNIFICADA (ZOOM 67%)
+   ========================================================================== */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f6d3a9;
+    color: #1a1a1a;
+    overflow-x: hidden;
+    font-size: 16px; /* Aumentado de 14px a 16px para mejor legibilidad */
+    margin: 0;
+}
+
+/* --- 1. NAVEGACIÓN (ZONA VERDE - TAMAÑO AUMENTADO) --- */
+.navegacion { 
+    background-color: #1a2a1a; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 30px 8%; /* Aumentado de 20px a 30px para dar más presencia */
+}
+
+.logo { 
+    color: #d2b48c; 
+    font-size: 3.2rem; /* Aumentado para destacar más */
+    font-family: 'Times New Roman', serif; 
+    margin: 0; 
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu a { 
+    color: white; 
+    text-decoration: none; 
+    margin: 0 1.5rem; 
+    font-size: 1.4rem; /* LETRAS DEL MENÚ AGRANDADAS */
+    transition: 0.3s;
+    padding-bottom: 5px;
+    border-bottom: 4px solid transparent;
+}
+
+.menu a.active, .menu a:hover { 
+    border-bottom: 4px solid white; 
+    font-weight: bold; 
+}
+
+/* BOTÓN LOGIN (Manteniendo tu estilo rectangular original pero escalado) */
+.boton-login { 
+    color: white; 
+    text-decoration: none; 
+    border: 1.5px solid white; 
+    padding: 10px 26px; 
+    border-radius: 4px; 
+    font-size: 1.1rem; /* Un poco más grande para acompañar al menú */
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.boton-login:hover {
+    background: white;
+    color: #1a2a1a;
+}
+
+/* --- 2. FILTROS SUPERIORES --- */
+.seccion-filtros-premium { 
+    border-bottom: 2px solid #f0f0f0; 
+    margin-bottom: 3rem; 
+    padding: 1.5rem 0; 
+}
+
+.filtros-container-premium {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.filtro-link-premium {
+    font-size: 1.9rem; /* Agrandado */
+    color: #999;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding-bottom: 0.8rem;
+    transition: 0.4s;
+    font-weight: 500;
+}
+
+.filtro-link-premium.activo { 
+    color: #1a2a1a; 
+    border-bottom: 4px solid #d2b48c; 
+    font-weight: 600; 
+}
+
+/* --- 3. CONTENEDOR EDITORIAL (LETRAS AGRANDADAS) --- */
+.editorial-container-67 { 
+    width: 85%; 
+    margin: 0 auto; 
+}
+
+.product-row-67 { 
+    margin-bottom: 10rem; 
+    gap: 6rem;
+}
+
+.product-visual-67 { width: 50%; display: flex; justify-content: center; }
+
+.water-sphere-67 {
+    position: relative;
+    width: 500px; /* Esferas ligeramente más grandes */
+    height: 500px;
+    background: radial-gradient(circle at 30% 30%, #e0f0ff 0%, #ffffff 70%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 15px 30px 80px rgba(0,0,0,0.04);
+}
+
+.main-img-67 { 
+    max-height: 85%; 
+    z-index: 5;
+    filter: drop-shadow(0 40px 70px rgba(0,0,0,0.22)); 
+    transition: transform 0.5s ease;
+}
+
+.product-info-67 { width: 50%; padding: 0 4%; }
+
+.step-67 {
+    font-size: 1rem;
+    letter-spacing: 8px;
+    color: #d2b48c;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.title-67 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 4.5rem; /* TAMAÑO DE LETRAS DE TÍTULOS AGRANDADO */
+    line-height: 0.9; 
+    margin-bottom: 1.5rem; 
+    font-weight: 700;
+}
+
+.title-67 span { font-weight: 400; font-size: 3rem; color: #999; font-style: italic; }
+
+.description-67 { 
+    color: #555; 
+    font-size: 1.4rem; /* TAMAÑO DE LETRAS DE DESCRIPCIÓN AGRANDADO */
+    line-height: 1.5; 
+    margin-bottom: 2.5rem; 
+    font-weight: 300;
+}
+
+.btn-explore-67 { 
+    text-decoration: none; 
+    color: #1a2a1a; 
+    font-weight: 600; 
+    font-size: 1.2rem;
+    border: 2.5px solid #1a2a1a;
+    padding: 1.2rem 2.8rem;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+footer { 
+    background-color: #1a2a1a; 
+    color: white;
+    padding: clamp(2rem, 5vw, 3rem); 
+    font-size: clamp(1rem, 1.5vw, 1.1rem); 
+}
+
+footer .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+footer .footer-content p {
+    margin: 0;
+    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+}
+
+.social-links {
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.social-links {
+    display: flex;
+    gap: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(3rem, 6vw, 3.5rem);
+    height: clamp(3rem, 6vw, 3.5rem);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    transition: transform 0.25s ease, background 0.25s ease;
+    color: white;
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    width: clamp(1.5rem, 3vw, 2rem);
+    height: clamp(1.5rem, 3vw, 2rem);
+    fill: currentColor;
+}

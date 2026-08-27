@@ -1,0 +1,421 @@
+/*Cuerpo general*/
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/*Modificacion del navegador*/
+.navegacion {
+    background-color: #1a2a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 8%;
+    position: relative;
+}
+
+/*Modificacion del Logo*/
+.logo {
+    color: #d2b48c;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-family: 'Times New Roman', serif;
+}
+
+/*Modificacion del texto navegador*/
+.menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    transition: opacity 0.3s;
+}
+
+/*Efectos del menu*/
+.menu a.active {
+    border-bottom: 3px solid white;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+/*Modificacion del texto del login*/
+.boton-login {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+}
+
+/*Efectos login*/
+.boton-login:hover {
+    background: white;
+    color: #1a2a1a;
+}
+
+/*Modificacion imagen de seccion, tamaños */
+.seccion-hero {
+    background-image: url('../img/Fondo1.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: clamp(300px, 60vh, 600px); 
+    padding: 0 10%;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    position: relative;
+}
+
+/*Modificacion de estilo imagen hero*/
+.seccion-hero::before {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+/*Modificacion del tamaño del contenedor del texto*/
+.contenedor-hero { 
+    max-width: 1000px;
+    position: relative;
+}
+
+/*Modificacion del texto dentro del contenedor*/
+.contenedor-hero p {
+    font-size: clamp(1.5rem, 4vw, 2.8rem);
+    line-height: 1.4;
+    color: #ffffff;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/*Modificacion del fondo del contenido, fondo, ajustes, tamaños y bordes*/
+.seccion-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(3rem, 10vw, 7rem) 0;
+    background-color: white;
+    min-height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/*Modificacion imagenes laterales, ejeY y posiciones*/ 
+.bebida-contenedor {
+    position:absolute;
+    z-index:  0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(1000px, 70vw);
+    
+}
+
+/*Posicion del eje x imagen izquierda*/
+.bebida-contenedor.izq { 
+    left: -500px;
+}
+
+/*posicion del eje X imagen derecha */
+.bebida-contenedor.der {
+    right: -550px;
+}
+
+/*Tamaño en pixeles de imagen derecha y izquierda, dimensiones*/
+.bebida-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    
+}
+
+.seccion-galeria {
+    background-color: #d7c2a7;
+    padding: clamp(3rem, 8vw, 6rem) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2rem, 4vw, 3rem);
+}
+
+/*Se modifica el contenedor del titulo */
+.texto-central {
+    max-width: 1000px;
+    text-align: center;
+    padding: 0 clamp(2rem, 4vw, 3.5rem);
+    position: relative;
+    z-index: 2;
+}
+
+/*Se modifica el texto del titulo y sutipografia*/
+.texto-central h2 {
+    font-family: 'Times New Roman', serif;
+    font-size: clamp(2rem, 7vw, 4rem); 
+    color: #1a2a1a;
+    margin-bottom: 25px;
+}
+
+/*El sub-tema se rezalta y se modifican sus estilos y*/
+.resaltado {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 35px;
+    display: block;
+    line-height: 1.5;
+}
+
+/*Modificacion del bloque de la lista de beneficios*/
+.lista-beneficios {
+    text-align: left;
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+/*Modificacion del tamaño de letra y el interlineado, texto central*/
+.lista-beneficios li {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    position: relative;
+    padding-left: 30px;
+    line-height: 1.6;
+}
+
+/*Modificacion del color, y el estilo del texto central */
+.lista-beneficios li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1a2a1a;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+}
+
+
+/*Se modifica la seccion, el estilo y las dimensiones de los productos*/
+.contenedor-carrusel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+}
+
+/*Se realiza el cambio del estilo de las tarjetas y los bloques carpeta*/
+.tarjeta {
+    background: transparent;
+    perspective: 1000px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(174, 76, 76, 0.2);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/*Se realizan las modificaciones de los tamaños de las imagenes en porcentaje*/
+.tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+
+.tarjeta-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d; /* Permite que las caras vivan en 3D */
+}
+
+.tarjeta-front, .tarjeta-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta:hover .tarjeta-inner {
+    transform: rotateY(180deg);
+}
+
+/* Cara de adelante */
+.tarjeta-front {
+    background-color: white;
+    overflow: hidden; /* Corta la imagen para que no salgan bordes */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* IMPORTANTE: Permite que se oculte al girar */
+    border-radius: 20px;
+}
+
+/* Cara de atrás (ya nace volteada) */
+.tarjeta-back {
+    background-color: #1a2a1a; /* Tu verde Alquimia */
+    color: #d2b48c; /* Tu color Arena */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg); /* Ya nace lista para el giro */
+    backface-visibility: hidden; /* Oculta la espalda */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.tarjeta-back h3 {
+    font-family: 'Times New Roman', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: clamp(0.6rem, 1vw, 0.8rem);
+}
+
+.tarjeta-back p {
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+    color: white;
+    line-height: 1.4;
+}
+
+.etiqueta {
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    bottom: clamp(2rem, 4vw, 2.5rem);
+    left: 0;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    pointer-events: none;
+}
+
+
+/*Se modifica el icono del punto laterales, proporciones, y tamaño*/
+.punto {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/*Se modifica el icono central, el icono medio, color, y posicion*/
+.punto.activo {
+    background-color: white;
+    width: 45px;
+    border-radius: 10px;
+}
+
+
+/*modificacion de contenedores y tamaños de los carruseles*/
+/* Ocultar los inputs reales */
+.radio-btn { display: none; }
+
+/* REGLA MAESTRA: Cuando un radio está checked, su tarjeta correspondiente se vuelve GRANDE */
+#c1:checked ~ .contenedor-carrusel .t1,
+#c2:checked ~ .contenedor-carrusel .t2,
+#c3:checked ~ .contenedor-carrusel .t3 {
+    width: 550px; 
+    height: 600px; 
+    opacity: 1;
+    z-index: 5;
+    transform: translateY(-25px);
+}
+
+/* Y las otras se mantienen o vuelven pequeñas */
+#c1:checked ~ .contenedor-carrusel .t2,
+#c1:checked ~ .contenedor-carrusel .t3,
+#c2:checked ~ .contenedor-carrusel .t1,
+#c2:checked ~ .contenedor-carrusel .t3,
+#c3:checked ~ .contenedor-carrusel .t1,
+#c3:checked ~ .contenedor-carrusel .t2 {
+    width: 500px; 
+    height: 500px; 
+    opacity: 0.9;
+    transform: translateY(0);
+    z-index: 1;
+    border: none;
+}
+
+/* Lógica de los Puntos */
+#c1:checked ~ .indicadores .p1,
+#c2:checked ~ .indicadores .p2,
+#c3:checked ~ .indicadores .p3 {
+    background-color: white;
+    width: 45px;
+    border-radius: 10px;
+}
+
+/*Estilo, tamaño y posicion de la parte final*/
+footer { 
+    background-color: #1a2a1a; 
+    color: white;
+    padding: 50px; 
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem); 
+}
+
+footer .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+footer .footer-content p {
+    margin: 0;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+}
+
+.social-links {
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: 12px;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    transition: transform 0.25s ease, background 0.25s ease;
+    color: white;
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+}

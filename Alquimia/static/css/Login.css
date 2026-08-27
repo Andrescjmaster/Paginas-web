@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cuerpo-login {
+    background-image: url('../img/FondoLogin.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.contenedor-principal {
+    width: 100%;
+    max-width: 680px;
+    padding: 1rem;
+}
+
+.tarjeta-login {
+    background-color: rgba(255, 252, 245, 0.97);
+    padding: 4.5rem 5rem;
+    border-radius: 28px;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.04),
+        0 20px 50px rgba(45, 70, 45, 0.15);
+    border: 1px solid rgba(180, 160, 120, 0.2);
+    text-align: center;
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.titulo-login {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2d3a1e;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.3px;
+}
+
+.titulo-login::after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 4px;
+    background: linear-gradient(90deg, #6b8f4e, #a0784a);
+    border-radius: 2px;
+    margin: 0.9rem auto 2.2rem;
+}
+
+/* ALERTAS */
+.alerta {
+    padding: 1.1rem 1.3rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: left;
+    border-left: 4px solid transparent;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.alerta-error {
+    background-color: #fdf0ee;
+    color: #a63220;
+    border-left-color: #c0503a;
+}
+
+.alerta-exito {
+    background-color: #f0f7ee;
+    color: #3a6b2a;
+    border-left-color: #6b8f4e;
+}
+
+.formulario-login {
+    text-align: left;
+}
+
+.grupo-entrada {
+    margin-bottom: 1.8rem;
+}
+
+.grupo-entrada label {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: #4a3f2f;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.grupo-entrada input {
+    width: 100%;
+    padding: 1.1rem 1.4rem;
+    border: 1.5px solid #ddd5c5;
+    border-radius: 12px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.15rem;
+    outline: none;
+    transition: all 0.25s ease;
+    background-color: #fdf9f3;
+    color: #2d2416;
+}
+
+.grupo-entrada input:focus {
+    border-color: #6b8f4e;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(107, 143, 78, 0.13);
+}
+
+.grupo-entrada input::placeholder {
+    color: #c0b09a;
+    font-style: italic;
+}
+
+.grupo-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.8rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #5c4f3a;
+}
+
+.grupo-checkbox input {
+    width: 1.3rem;
+    height: 1.3rem;
+    cursor: pointer;
+    accent-color: #6b8f4e;
+    flex-shrink: 0;
+}
+
+.grupo-checkbox label {
+    cursor: pointer;
+}
+
+.boton-ingresar {
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, #3d5c28 0%, #2d4620 100%);
+    color: #f5ede0;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 0.3rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+}
+
+.boton-ingresar:hover {
+    background: linear-gradient(135deg, #4a6e30 0%, #3d5c28 100%);
+    box-shadow: 0 8px 24px rgba(45, 70, 32, 0.3);
+    transform: translateY(-2px);
+}
+
+.boton-ingresar:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.pie-tarjeta {
+    margin-top: 2rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e8dece;
+    text-align: center;
+}
+
+.pie-tarjeta p { color: #7a6a55; }
+
+.pie-tarjeta a {
+    color: #5a7a38;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.pie-tarjeta a:hover {
+    color: #3d5c28;
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .tarjeta-login { padding: 2.5rem 2rem; }
+    .titulo-login { font-size: 2.2rem; }
+}
