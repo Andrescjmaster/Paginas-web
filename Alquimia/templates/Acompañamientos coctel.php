@@ -34,7 +34,7 @@ session_start();
       <div style="display:flex; align-items:center; gap:10px;">
     <span style="color:white;">
         <i class="bi bi-person-circle"></i> 
-        <?php echo $_SESSION['usuario_nombre']; ?>
+<?php echo htmlspecialchars($_SESSION['usuario_nombre'] ?? 'Invitado'); ?>    </span>
     </span>
     
     <a href="logout.php" class="btn btn-outline-light rounded-pill">
