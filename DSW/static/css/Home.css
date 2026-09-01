@@ -1,0 +1,293 @@
+/* =========================================
+   Home.css - Solo estilos del HOME / Hero
+   ========================================= */
+:root {
+  --azul-oscuro: #0a1e6b;
+  --amarillo: #f2c744;
+  --amarillo-hover: #e8b830;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #fffcf0;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero-home {
+  position: relative;
+  width: 97%;
+  max-width: 1350px;
+  margin: 0 auto;
+  height: 560px;
+  border-radius: 0 0 18px 18px;
+  overflow: hidden;
+  background: #0a1e6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMÁGENES ALOJADAS EN ESTE CSS (correspondiente a Home.html) 
+   Para cambiarlas: reemplaza el archivo en static/imagenes/ 
+   Mantén el mismo nombre o cambia la URL aquí */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  /* HERO - tu imagen local primero, fallback Unsplash si no existe */
+  background: url('../imagenes/hero-puerto.jpg') center 38% / cover no-repeat;
+  background-image: url('../imagenes/hero-puerto.jpg'), url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=80');
+  transform: scale(1);
+  transition: transform 8s ease;
+}
+.hero-home:hover .hero-bg { transform: scale(1.03); }
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.06) 0%, rgba(10,30,107,0.12) 30%, rgba(10,20,80,0.88) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  margin-top: 70px;
+  max-width: 860px;
+  animation: fadeUp 0.9s ease both;
+}
+
+.hero-content h1 {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 0.4px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.38);
+  text-transform: uppercase;
+}
+
+.hero-content .sub {
+  margin-top: 16px;
+  color: #fde68a;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.35);
+}
+
+.btn-home {
+  display: inline-block;
+  margin-top: 30px;
+  background: var(--amarillo);
+  color: var(--azul-oscuro);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  padding: 15px 38px;
+  border-radius: 999px;
+  text-decoration: none;
+  line-height: 1.3;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.28);
+  transition: all 0.25s ease;
+  border: none;
+}
+
+.btn-home:hover {
+  background: var(--amarillo-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.32);
+  color: var(--azul-oscuro);
+}
+
+.btn-home:active { transform: translateY(-1px); }
+
+/* =========================================
+   MISIÓN / VISIÓN - secciones debajo del hero
+   Layout solapado como en el diseño
+   ========================================= */
+.mv-section {
+  width: 97%;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 40px 30px 20px;
+  background: #fffcf0;
+}
+
+.mv-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 380px;
+  margin-bottom: 30px;
+}
+
+/* Imágenes Misión/Visión - alojadas en este CSS */
+.mv-img {
+  width: 38%;
+  height: 360px;
+  border-radius: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  position: relative;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 6s ease;
+}
+.mv-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.02) 0%, rgba(6,12,60,0.06) 55%, rgba(6,12,60,0.32) 100%);
+  pointer-events: none;
+}
+.mv-img:hover { transform: scale(1.05); }
+
+.mv-img-mision {
+  /* Conectado a tu archivo: static/imagenes/mision.jpeg - espejada para que mire a la derecha y enfocada abajo */
+  background-image: url('../imagenes/mision.jpeg');
+  background-position: center 78%;
+  transform: scaleX(-1);
+}
+.mv-img-mision:hover { transform: scaleX(-1) scale(1.05); }
+.mv-img-vision {
+  /* Conectado a tu archivo: static/imagenes/vision.jpeg */
+  background-image: url('../imagenes/vision.jpeg');
+}
+
+/* Títulos MISIÓN / VISIÓN - centrados arriba sin tapar imagen/card */
+.mv-title {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  font-size: 52px;
+  font-weight: 900;
+  color: #0a1a6b;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.28), 0 2px 8px rgba(0,0,0,0.18);
+  z-index: 3;
+  line-height: 1;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.mv-row.vision .mv-title {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+/* Card amarilla */
+.mv-card {
+  flex: 1;
+  background: linear-gradient(180deg, #fff6c9 0%, #fde68a 35%, #f2c744 100%);
+  border-radius: 22px;
+  padding: 70px 40px 70px 50px;
+  min-height: 280px;
+  position: relative;
+  z-index: 2;
+  margin-left: -40px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: flex-start;
+}
+.mv-row.vision .mv-card {
+  margin-left: 0;
+  margin-right: -40px;
+  order: -1;
+  padding: 70px 50px 70px 40px;
+}
+
+.mv-card p {
+  font-size: 15px;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Botón azul dentro de card */
+.btn-mv {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0a1a6b;
+  color: #f2c744;
+  font-weight: 800;
+  font-size: 13.5px;
+  letter-spacing: 0.4px;
+  padding: 12px 34px;
+  border-radius: 999px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.25;
+  box-shadow: 0 4px 16px rgba(10,26,107,0.3);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  border: none;
+}
+.btn-mv:hover {
+  background: #0f248a;
+  color: #fde68a;
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10,26,107,0.4);
+}
+
+/* Animación entrada */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Misión/Visión */
+@media (max-width: 1100px) {
+  .mv-title { font-size: 44px; }
+  .mv-img { width: 42%; height: 320px; }
+}
+
+@media (max-width: 980px) {
+  .hero-content h1 { font-size: 38px; }
+  .hero-content .sub { font-size: 19px; }
+  .mv-row { flex-direction: column; min-height: auto; gap: 0; }
+  .mv-img { width: 100%; height: 260px; border-radius: 16px; }
+  .mv-title {
+    position: relative;
+    top: auto; left: auto; right: auto;
+    transform: none;
+    text-align: center;
+    margin: 18px 0 14px;
+    font-size: 38px;
+  }
+  .mv-row.vision .mv-title { right: auto; transform: none; }
+  .mv-card, .mv-row.vision .mv-card {
+    margin: 0;
+    width: 100%;
+    padding: 36px 24px 50px;
+    min-height: auto;
+    order: 0;
+  }
+  .mv-section { padding: 30px 16px 10px; width: 100%; }
+}
+
+@media (max-width: 760px) {
+  .hero-home {
+    width: 100%;
+    height: 500px;
+    border-radius: 0 0 16px 16px;
+  }
+  .hero-content h1 { font-size: 29px; }
+  .hero-content .sub { font-size: 17px; }
+  .hero-content { margin-top: 50px; }
+  .btn-home { padding: 13px 30px; font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 { font-size: 25px; }
+}

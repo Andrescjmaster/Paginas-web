@@ -1,0 +1,139 @@
+/* =========================================
+   Navegador.css - Universal, siempre arriba
+   Se carga en TODAS las páginas
+   ========================================= */
+:root {
+  --azul: #0a1e8a;
+  --azul-oscuro: #0a1e6b;
+  --amarillo: #f2c744;
+  --amarillo-hover: #e8b830;
+}
+
+.navegador {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: none;
+  transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  z-index: 100;
+  background: rgba(255,255,255,0.32);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.navegador.scrolled {
+  position: fixed;
+  background: rgba(255, 232, 128, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 12px 40px;
+}
+
+/* Logo DSW */
+.logo-dsw {
+  font-weight: 900;
+  font-size: 42px;
+  letter-spacing: -2px;
+  line-height: 1;
+  text-decoration: none;
+  user-select: none;
+  display: flex;
+}
+.logo-dsw span:nth-child(1) { color: #0a2a8a; }
+.logo-dsw span:nth-child(2) { color: #d4a017; font-style: italic; }
+.logo-dsw span:nth-child(3) { color: #0a2a8a; }
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 34px;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--azul);
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 4px 6px;
+  position: relative;
+  transition: color 0.2s;
+  text-align: center;
+  line-height: 1.1;
+  display: inline-block;
+}
+
+.nav-links a.active { color: var(--azul); }
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  bottom: -7px;
+  height: 3px;
+  background: var(--amarillo);
+  border-radius: 2px;
+}
+.nav-links a:hover { color: #1a3ab5; }
+
+/* Hamburguesa */
+.btn-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.btn-hamburger span {
+  width: 26px;
+  height: 3px;
+  background: var(--azul-oscuro);
+  border-radius: 2px;
+  display: block;
+  transition: all 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .nav-links { gap: 18px; }
+  .nav-links a { font-size: 13px; }
+}
+
+@media (max-width: 820px) {
+  .navegador {
+    width: 100%;
+    border-radius: 0;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.95);
+  }
+  .logo-dsw { font-size: 34px; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    border-radius: 0 0 14px 14px;
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .btn-hamburger { display: flex; }
+}

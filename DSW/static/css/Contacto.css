@@ -1,0 +1,136 @@
+/* =========================================
+   Contacto.css - solo para Contacto.html
+   Footer Contactanos / De interés
+   ========================================= */
+:root {
+  --azul: #0a1a6b;
+  --amarillo: #fdd84a;
+  --bg: #fffdf0;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Footer Contactanos - pantalla completa bien distribuido */
+.footer-contacto {
+  min-height: 100vh;
+  padding: 110px 50px 100px;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(180deg, #fff6c9 0%, #fde68a 22%, #f2c744 62%, #e8b830 100%);
+  border-radius: 22px 22px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-grid {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  justify-content: space-around;
+  gap: 32px;
+  padding: 20px 40px 60px;
+  width: 100%;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+}
+
+.footer-block h3 {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.12);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.footer-block a {
+  display: block;
+  color: var(--azul);
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.55;
+  transition: opacity 0.2s;
+}
+.footer-block a:hover { opacity: 0.75; text-decoration: underline; }
+
+/* Contactanos 3 columnas */
+.contact-cols {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.contact-cols a { font-size: 28px; }
+
+/* Siguenos */
+.siguenos {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 22px;
+}
+.siguenos h3 { margin: 0; font-size: 32px; }
+.social-icons {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.social-icons a {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--azul);
+  font-size: 38px;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.social-icons a:hover { transform: scale(1.15); }
+
+/* Logo DSW abajo derecha */
+.footer-logo {
+  position: absolute;
+  right: 50px;
+  bottom: 28px;
+  font-weight: 900;
+  font-size: 46px;
+  letter-spacing: -2px;
+  line-height: 1;
+  user-select: none;
+}
+.footer-logo span:nth-child(1) { color: #0a2a8a; }
+.footer-logo span:nth-child(2) { color: #d4a017; font-style: italic; }
+.footer-logo span:nth-child(3) { color: #0a2a8a; }
+
+/* Responsive */
+@media (max-width: 980px) {
+  .footer-contacto { padding: 30px 24px 90px; }
+  .footer-row { flex-direction: column; gap: 18px; }
+  .contact-cols { flex-direction: column; gap: 4px; }
+  .footer-logo { right: 24px; bottom: 18px; font-size: 38px; }
+}
+
+@media (max-width: 600px) {
+  .footer-block h3 { font-size: 17px; }
+  .footer-block a, .contact-cols a { font-size: 15px; }
+  .siguenos { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
